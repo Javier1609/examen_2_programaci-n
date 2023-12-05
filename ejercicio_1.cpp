@@ -32,6 +32,16 @@ public:
             throw std::runtime_error("El símbolo no ha sido encontrado en el entorno.");
         }
     }
+    try {
+        Environment env;
+
+        env.insert("variable1", Variant(42));
+
+        Variant result = env.lookup("variable2");
+
+    }
+
+
 
 
 };
