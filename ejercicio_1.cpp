@@ -35,12 +35,14 @@ public:
     try {
         Environment env;
 
-        env.insert("variable1", Variant(42));
+        env.insert("variable1", Variante(42));
 
-        Variant result = env.lookup("variable2");
-
+        Variante result = env.lookup("variable2");
     }
-
+    catch (const std::runtime_error& e) {
+        std::cout << e.what() << std::endl;
+    }
+    };
 
 
 
