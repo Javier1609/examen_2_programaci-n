@@ -58,12 +58,14 @@ public:
             throw std::runtime_error("Símbolo no encontrado en el entorno.");
         }
     }
-    bool exists(const std::string& name) const {
+
+    bool exists(const std::string &name) const {
         return symbolTable.find(name) != symbolTable.end();
     }
 
     Environment
-    env.insert("jugador_x", Variant(0.0));
+            env
+    .insert("jugador_x", Variant(0.0));
     env.insert("jugador_y", Variant(10.0));
     env.insert("jugador_z", Variant(0.0));
     env.insert("jugador_vida", Variant(100));
@@ -75,10 +77,18 @@ public:
         double posvida = env.lookup("jugador_vida").get<double>();
     }
 
-    env.insert("jugador_x", Variant(newPosx));
-    env.insert("jugador_y", Variant(newPosy));
-    env.insert("jugador_z", Variant(newPosz));
-    env.insert("jugador_vida", Variant(newPosvida));
+    env.insert("jugador_x",
+    Variant(newPosx)
+    );
+    env.insert("jugador_y",
+    Variant(newPosy)
+    );
+    env.insert("jugador_z",
+    Variant(newPosz)
+    );
+    env.insert("jugador_vida",
+    Variant(newPosvida)
+    );
 
     else {
         std::cerr << "Error: Alguno de los símbolos del jugador no existe en el entorno." << std::endl;
