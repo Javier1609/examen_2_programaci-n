@@ -80,6 +80,10 @@ public:
     env.insert("jugador_z", Variant(newPosz));
     env.insert("jugador_vida", Variant(newPosvida));
 
+    else {
+        std::cerr << "Error: Alguno de los símbolos del jugador no existe en el entorno." << std::endl;
+    }
+
 }
 
 
