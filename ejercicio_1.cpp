@@ -24,6 +24,14 @@ public:
             throw std::runtime_error("El simbolo ya existe en el entorno.");
         }
     }
+    Variante lookup(const std::string& name) const {
+        auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            return it->second;
+        } else {
+            throw std::runtime_error("El símbolo no ha sido encontrado en el entorno.");
+        }
+    }
 
 
 };
