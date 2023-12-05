@@ -55,8 +55,13 @@ public:
         if (it != symbolTable.end()) {
             symbolTable.erase(it);
         }
+         else {
+                throw std::runtime_error("Símbolo no encontrado en el entorno.");
+            }
+        }
 
 
 
 
-};
+
+    };
