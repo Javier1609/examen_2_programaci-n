@@ -61,11 +61,14 @@ public:
     bool exists(const std::string& name) const {
         return symbolTable.find(name) != symbolTable.end();
     }
+
     Environment
     env.insert("jugador_x", Variant(0.0));
     env.insert("jugador_y", Variant(10.0));
     env.insert("jugador_z", Variant(0.0));
     env.insert("jugador_vida", Variant(100));
+
+    if (env.exists("jugador_x") && env.exists("jugador_y") && env.exists("jugador_z") && env.exists("jugador_vida")) {
 
 
 
