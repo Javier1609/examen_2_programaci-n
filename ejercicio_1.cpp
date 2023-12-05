@@ -18,13 +18,14 @@ public:
     Environment() {}
 
 
-    void insert(const std::string& name, const Variante& value) {
+    void insert(const std::string &name, const Variante &value) {
         auto result = symbolTable.insert({name, value});
         if (!result.second) {
             throw std::runtime_error("El simbolo ya existe en el entorno.");
         }
     }
-    Variante lookup(const std::string& name) const {
+
+    Variante lookup(const std::string &name) const {
         auto it = symbolTable.find(name);
         if (it != symbolTable.end()) {
             return it->second;
@@ -32,6 +33,7 @@ public:
             throw std::runtime_error("El símbolo no ha sido encontrado en el entorno.");
         }
     }
+
     try {
         Environment env;
 
@@ -39,10 +41,21 @@ public:
 
         Variante result = env.lookup("variable2");
     }
-    catch (const std::runtime_error& e) {
+    catch (
+    const std::runtime_error &e
+    ) {
         std::cout << e.what() << std::endl;
     }
-     return Variante();
+    return
+
+    Variante();
+
+    void remove(const std::string& name) {
+        auto it = symbolTable.find(name);
+        if (it != symbolTable.end()) {
+            symbolTable.erase(it);
+        }
+
 
 
 
