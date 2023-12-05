@@ -75,7 +75,10 @@ public:
         double posvida = env.lookup("jugador_vida").get<double>();
     }
 
-    env.insert("jugador_x", Variant(newPosx));;
+    env.insert("jugador_x", Variant(newPosx));
+    env.insert("jugador_y", Variant(newPosy));
+    env.insert("jugador_z", Variant(newPosz));
+    env.insert("jugador_vida", Variant(newPosvida));
 
 }
 
