@@ -59,8 +59,9 @@ public:
                 throw std::runtime_error("Símbolo no encontrado en el entorno.");
             }
         }
-
-
+    bool exists(const std::string& name) const {
+        return symbolTable.find(name) != symbolTable.end();
+    }
 
 
 
