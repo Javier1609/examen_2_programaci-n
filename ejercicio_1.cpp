@@ -50,18 +50,20 @@ public:
 
     Variante();
 
-    void remove(const std::string& name) {
+    void remove(const std::string &name) {
         auto it = symbolTable.find(name);
         if (it != symbolTable.end()) {
             symbolTable.erase(it);
+        } else {
+            throw std::runtime_error("Símbolo no encontrado en el entorno.");
         }
-         else {
-                throw std::runtime_error("Símbolo no encontrado en el entorno.");
-            }
-        }
+    }
     bool exists(const std::string& name) const {
         return symbolTable.find(name) != symbolTable.end();
     }
+    Environment
+    env.insert("jugador_x", Variant(0.0));
+
 
 
 
