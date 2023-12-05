@@ -69,6 +69,11 @@ public:
     env.insert("jugador_vida", Variant(100));
 
     if (env.exists("jugador_x") && env.exists("jugador_y") && env.exists("jugador_z") && env.exists("jugador_vida")) {
+        double posx = env.lookup("jugador_x").get<double>();
+        double posy = env.lookup("jugador_y").get<double>();
+        double posz = env.lookup("jugador_z").get<double>();
+        double posvida = env.lookup("jugador_vida").get<double>();
+    }
 
 
 
