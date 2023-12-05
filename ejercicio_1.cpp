@@ -63,31 +63,24 @@ public:
         return symbolTable.find(name) != symbolTable.end();
     }
 
-    Environment
-            env
-    .insert("jugador_x", Variant(0.0));
-    env.insert("jugador_y", Variant(10.0));
-    env.insert("jugador_z", Variant(0.0));
-    env.insert("jugador_vida", Variant(100));
+    Environment(const Environment &other) = delete;
+    Environment.insert("jugador_x", Variante(0.0));
 
-    if (env.exists("jugador_x") && env.exists("jugador_y") && env.exists("jugador_z") && env.exists("jugador_vida")) {
+    if (env.exists("jugador_x") ) {
         double posx = env.lookup("jugador_x").get<double>();
-        double posy = env.lookup("jugador_y").get<double>();
-        double posz = env.lookup("jugador_z").get<double>();
-        double posvida = env.lookup("jugador_vida").get<double>();
+        double newPosx = posx + 1.0;
+
+        env.insert("jugador_x",
+        Variante(newPosx)
+        );
+
+    } else {
+        std::cerr << "Error: Alguno de los símbolos del jugador no existe en el entorno." << std::endl;
+
     }
 
     env.insert("jugador_x",
-    Variant(newPosx)
-    );
-    env.insert("jugador_y",
-    Variant(newPosy)
-    );
-    env.insert("jugador_z",
-    Variant(newPosz)
-    );
-    env.insert("jugador_vida",
-    Variant(newPosvida)
+    Variante(newPosx)
     );
 
     else {
@@ -95,8 +88,4 @@ public:
     }
 
 }
-
-
-
-
-};
+}
