@@ -63,6 +63,7 @@ public:
     }
     Environment
     env.insert("jugador_x", Variant(0.0));
+    env.insert("jugador_y", Variant(10.0));
 
 
 
