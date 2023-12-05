@@ -18,13 +18,9 @@ class Variante {
     };
 public:
     Variante() : type(Type::INTEGER), int_value(0) {}
-
     Variante(int value) : type(Type::INTEGER), int_value(value) {}
-
     Variante(double value) : type(Type::DOUBLE), double_value(value) {}
-
     Variante(const std::string &value) : type(Type::STRING), string_value(value) {}
-
     Variante(const Variante &other) : type(other.type) {
         switch (type) {
             case Type::INTEGER:
@@ -38,7 +34,6 @@ public:
                 break;
         }
     }
-
     Variante &operator=(const Variante &other) {
         if (this != &other) {
             this->~Variante();
@@ -46,7 +41,6 @@ public:
         }
         return *this;
     }
-
     ~Variante() {
         switch (type) {
             case Type::STRING:
@@ -84,15 +78,12 @@ public:
     }
 };
 
-
-
 class Environment {
 private:
     std::map<std::string, Variante> symbolTable;
 public:
 
     Environment() {}
-
 
     void insert(const std::string &name, const Variante &value) {
         auto result = symbolTable.insert({name, value});
