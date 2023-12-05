@@ -8,3 +8,7 @@ private:
     enum class Type { INT, FLOAT, STRING, BOOL, NONE };
 
     }
+class Environment {
+private:
+    std::map<std::string, Variante> symbolTable;
+};
