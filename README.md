@@ -7,6 +7,8 @@ La revisión del código se centró en mejorar la estructura y coherencia del di
 EJERCICIOS TEORICOS
 
 
+
+
 1.¿Cuál es el propósito principal de la clase Variant en el lenguaje Tiny Lisp?
 
 b) Representar cualquier tipo de dato Lisp
